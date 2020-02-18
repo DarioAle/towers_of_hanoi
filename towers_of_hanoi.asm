@@ -8,7 +8,6 @@
 # *  Description:
 #    This program receives the number of disks and simulates the moves from the 
 #    Towers of Hanoi problem in addresses 0x10010000, 0x10010020, 0x10010040
-#    Just another comment
 
 .data
 STACK_A: .word 0,0,0,0,0,0,0,0
