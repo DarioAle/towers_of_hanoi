@@ -13,7 +13,7 @@
 .text
 
 Main:		
-		addi $s0, $zero, 3	# Input number of disks
+		addi $s0, $zero, 8	# Input number of disks
 		
 		# Loading addresses for the stacks base minus 4 bytes
 		addi $a1, $zero, 0x1000	# Loading base address upper half for Peg A
@@ -77,7 +77,7 @@ ELSE:
 		sw $t5, ($a2) 		# Write value of new top
 
 
-		addi $a0, $a0, -1	# decrement size of disks
+		# addi $a0, $a0, -1	# decrement size of disks
 		# swap auxiliary and source
 		add $t7, $a1, $zero	# Save in temp source		
 		add $a1, $a3, $zero	# assign to source, auxiliary
@@ -92,8 +92,9 @@ ELSE:
 		
 		lw $ra ($sp)		# Bottom of the stack return address		
 		addi $sp, $sp, 4	# Update top in stack pointer
-END:		
 		addi $a0, $a0, 1
+END:		
+		
 		jr $ra
 		
 EXIT:
