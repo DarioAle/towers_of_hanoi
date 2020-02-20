@@ -49,7 +49,7 @@ SolveHanoiRecursive:
 		# Write on target
 		addi $a2, $a2, 4	# Increment the top pointer
 		sw $t5, ($a2) 		# Write value of new top in target
-		j END
+		jr $ra
 ELSE:		
 		addi $sp, $sp, -4	# Save space for $ra
 		sw $ra ($sp)		# Bottom of the stack return address
@@ -64,7 +64,7 @@ ELSE:
 		
 		# swap auxiliary and target to go back to the refernces originally made to this call
 		add $t7, $a2, $zero	# Save in temp target
-		add $a2, $a3, $zero	# assign to target, auxiliary
+		add $a2, $a3, $zero	# assign to target, auxiliary 
 		add $a3, $t7, $zero	# assign to auxiliary, target
 		
 		
@@ -92,7 +92,7 @@ ELSE:
 		
 		lw $ra ($sp)		# Bottom of the stack return address		
 		addi $sp, $sp, 4	# Update top in stack pointer
-		addi $a0, $a0, 1
+		addi $a0, $a0, 1 	# Recover value of disks for this call
 END:		
 		
 		jr $ra
