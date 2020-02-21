@@ -13,7 +13,7 @@
 .text
 
 Main:		
-		addi $s0, $zero, 8	# Input number of disks
+		addi $s0, $zero, 3	# Input number of disks
 		
 		# Loading addresses for the stacks base minus 4 bytes
 		addi $a1, $zero, 0x1000	# Loading base address upper half for Peg A
